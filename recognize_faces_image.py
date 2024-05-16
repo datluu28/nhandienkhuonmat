@@ -16,9 +16,12 @@ args = vars(ap.parse_args())
 # load the known faces and encodings
 print("[INFO] loading encodings...")
 data = pickle.loads(open(args["encodings"], "rb").read())      # loads - load từ file
+# Đường dẫn mới đến hình ảnh
+image_path = "/Users/datluu28/Documents/nhận diện khuôn mặt/Face-Recognition-with-OpenCV-Python-DL/test_images/000.png"
 
-# load image và chuyển từ BGR to RGB (dlib cần để chuyển về encoding)
-image = cv2.imread(args["image"])
+# Đọc ảnh từ đường dẫn đã định nghĩa
+image = cv2.imread(image_path)
+
 rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # CŨng làm tương tự cho ảnh test, detect face, extract face ROI, chuyển về encoding

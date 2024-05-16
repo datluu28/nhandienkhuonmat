@@ -6,7 +6,7 @@ import cv2
 import os
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-o", "--output", required=True, help="path to output directory")
+ap.add_argument("-o", "--output", required=True, help="")
 args = vars(ap.parse_args())
 
 video = cv2.VideoCapture(0)
